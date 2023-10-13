@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+      
+      <record model="ir.ui.view" id="cinemas_form_view">
+        <field name="name">cinemas.form</field>
+        <field name="model">cineprex.cinemas</field>
+        <field name="arch" type="xml">
+          <form string="Cinema Form">
+            <sheet>
+              <group>
+                <field name="name"/>
+                <field name="adresse"/>
+                <field name="telephone"/>
+                <field name="image" widget="image" class="oe_avatar" options="{'size': [150, 200]}" />
+                <field name="ville_id"/>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+
+      <record model="ir.ui.view" id="cinemas_search_view">
+        <field name="name">cinemas.search</field>
+        <field name="model">cineprex.cinemas</field>
+        <field name="arch" type="xml">
+          <search>
+            <field name="name"/>
+            <field name="adresse"/>
+            <field name="telephone"/>
+            <field name="image" widget="image" class="oe_avatar" options="{'size': [150, 200]}" />
+            <field name="ville_id"/>
+          </search>
+        </field>
+      </record>
+
+      <record model="ir.ui.view" id="session_tree_view">
+        <field name="name">cinemas.tree</field>
+        <field name="model">cineprex.cinemas</field>
+        <field name="arch" type="xml">
+          <tree string="Cinema Tree">
+            <field name="name"/>
+            <field name="adresse"/>
+            <field name="telephone"/>
+            <field name="image" widget="image" class="oe_avatar" options="{'size': [150, 200]}" />
+            <field name="ville_id"/>
+          </tree>
+        </field>
+</record>
+
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        <record model="ir.actions.act_window" id="cinemas_list_action">
+            <field name="name">Cinemas</field>
+            <field name="res_model">cineprex.cinemas</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Enregistrer votre premier cinéma !</p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

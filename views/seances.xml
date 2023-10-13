@@ -2,49 +2,52 @@
 <odoo>
     <data>
 
-      <record model="ir.ui.view" id="seance_form_view">
-        <field name="name">seance.form</field>
-        <field name="model">cineplex.seance</field>
+      <record model="ir.ui.view" id="seances_form_view">
+        <field name="name">seances.form</field>
+        <field name="model">cineprex.seances</field>
         <field name="arch" type="xml">
-          <form string="Seance Form">
+          <form string="Seances Form">
             <sheet>
               <group>
                 <field name="start_date"/>
-                <field name="duration"/>
-                <field name="seats"/>
+                <field name="duree_film"/>
+                <field name="place_salle_max"/>
                 <field name="salle_id"/>
                 <field name="film_id"/>
+                <field name="affiche" widget="image" class="oe_avatar" options="{'size': [150, 200]}" />
               </group>
             </sheet>
           </form>
         </field>
       </record>
 
-      <record model="ir.ui.view" id="seance_search_view">
-        <field name="name">seance.search</field>
-        <field name="model">cineplex.seance</field>
+      <record model="ir.ui.view" id="seances_search_view">
+        <field name="name">seances.search</field>
+        <field name="model">cineprex.seances</field>
         <field name="arch" type="xml">
           <search>
             <field name="start_date"/>
-            <field name="duration"/>
-            <field name="seats"/>
+            <field name="duree_film"/>
+            <field name="place_salle_max"/>
             <field name="salle_id"/>
             <field name="film_id"/>
+            <field name="affiche" widget="image" class="oe_avatar" options="{'size': [150, 200]}" />
           </search>
         </field>
       </record>
 
       <!-- override the automatically generated list view for courses -->
-      <record model="ir.ui.view" id="Seance_tree_view">
-        <field name="name">seance.tree</field>
-        <field name="model">cineplex.seance</field>
+      <record model="ir.ui.view" id="Seances_tree_view">
+        <field name="name">seances.tree</field>
+        <field name="model">cineprex.seances</field>
         <field name="arch" type="xml">
           <tree string="Seance Tree">
             <field name="start_date"/>
-            <field name="duration"/>
-            <field name="seats"/>
+            <field name="duree_film"/>
+            <field name="place_salle_max"/>
             <field name="salle_id"/>
             <field name="film_id"/>
+            <field name="affiche" widget="image" class="oe_avatar" options="{'size': [150, 200]}" />
           </tree>
         </field>
       </record>
@@ -54,13 +57,13 @@
             The following tag is an action definition for a "window action",
             that is an action opening a view or a set of views
         -->
-        <record model="ir.actions.act_window" id="seance_list_action">
+        <record model="ir.actions.act_window" id="seances_list_action">
             <field name="name">Seances</field>
-            <field name="res_model">cineplex.seance</field>
+            <field name="res_model">cineprex.seances</field>
             <!-- <field name="view_type">form</field> -->
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create the first seance</p>
+                <p class="oe_view_nocontent_create">Enregistrer votre première séance !</p>
             </field>
         </record>
 

@@ -1,0 +1,26 @@
+<odoo>
+  <!-- top level menu: no parent -->
+  <menuitem id="main_cineprex_menu" name="CinePrex" web_icon="cineprex,static/src/img/logo.png"/>
+
+  <!-- A first level in the left side menu is needed
+       before using action= attribute -->
+
+  <menuitem id="cineprex_settings" name="Paramètres" parent="main_cineprex_menu"/>     
+  <!-- <menuitem id="cineprex_menu" name="CinePrex" parent="main_cineprex_menu"/> -->
+
+  <!-- Actions associées aux menus -->
+  <record id="villes_list_action" model="ir.actions.act_window">
+    <field name="name">Villes</field>
+    <field name="res_model">cineprex.villes</field>
+    <field name="view_mode">tree,form</field>
+    <!-- Ajoutez d'autres champs nécessaires ici -->
+  </record>
+
+  <!-- Définition des menus -->
+  <menuitem id="villes_menu" name="Villes" parent="cineprex_settings" action="villes_list_action"/>
+
+  <menuitem id="cinemas_menu" name="Cinemas" parent="main_cineprex_menu" action="cinemas_list_action"/>
+  <menuitem id="films_menu" name="Films" parent="main_cineprex_menu" action="films_list_action"/>
+  <menuitem id="salles_menu" name="Salles" parent="main_cineprex_menu" action="salles_list_action"/>
+  <menuitem id="seances_menu" name="Seances" parent="main_cineprex_menu" action="seances_list_action"/>
+</odoo>

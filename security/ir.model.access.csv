@@ -1,2 +1,6 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_cineplex_cineplex,cineplex.cineplex,model_cineplex_cineplex,,1,0,0,0
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+cineprex.access_cineprex_villes,access_cineprex_villes,cineprex.model_cineprex_villes,base.group_user,1,1,1,1
+cineprex.access_cineprex_films,access_cineprex_films,cineprex.model_cineprex_films,base.group_user,1,1,1,1
+cineprex.access_cineprex_salles,access_cineprex_salles,cineprex.model_cineprex_salles,base.group_user,1,1,1,1
+cineprex.access_cineprex_cinemas,access_cineprex_cinemas,cineprex.model_cineprex_cinemas,base.group_user,1,1,1,1
+cineprex.access_cineprex_seances,access_cineprex_seances,cineprex.model_cineprex_seances,base.group_user,1,1,1,1
