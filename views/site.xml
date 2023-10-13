@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+      
+      <record model="ir.ui.view" id="site_form_view">
+        <field name="name">site.form</field>
+        <field name="model">cineplex.site</field>
+        <field name="arch" type="xml">
+          <form string="Site Form">
+            <sheet>
+              <group>
+                <field name="name"/>
+                <field name="city_id"/>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+
+      <record model="ir.ui.view" id="site_search_view">
+        <field name="name">site.search</field>
+        <field name="model">cineplex.site</field>
+        <field name="arch" type="xml">
+          <search>
+            <field name="name"/>
+            <field name="city_id"/>
+          </search>
+        </field>
+      </record>
+
+      <record model="ir.ui.view" id="session_tree_view">
+        <field name="name">site.tree</field>
+        <field name="model">cineplex.site</field>
+        <field name="arch" type="xml">
+          <tree string="Site Tree">
+            <field name="name"/>
+            <field name="city_id"/>
+          </tree>
+        </field>
+</record>
+
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        <record model="ir.actions.act_window" id="site_list_action">
+            <field name="name">Sites</field>
+            <field name="res_model">cineplex.site</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first site</p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
