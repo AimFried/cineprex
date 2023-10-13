@@ -1,2 +1,2 @@
-# cineplex
-project odoo M1
+# Odoo - CinéPrex
+
