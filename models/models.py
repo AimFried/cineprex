@@ -73,6 +73,15 @@ class Seances(models.Model):
     def _set_nb_place(self):
         self.place_salle_max = self.salle_id.nb_place
 
+    # @api.model
+    # def create(self, values):
+    #      record = super(Seances, self).create(values)
+    #      self.env["event.event"].create({
+    #         'name': 'test',
+    #         'date_begin': record.start_date,
+    #         'date_end': record.start_date,
+    #     })
+
     # @api.constrains('seats', 'duration')
     # def _verify_seats(self):
     #     for r in self:
@@ -101,28 +110,4 @@ class Seances(models.Model):
 #                 raise exceptions.ValidationError("La Duree doit etre sup a 0")
             
 
-    
-            
-
-    # @api.model
-    # def create(self, values):
-    #     try:
-    #         seance = super(Seance, self).create(values)
-
-    #         # Créez un événement du module Événement d'Odoo
-    #         event = self.env['event.event'].create({
-    #             'name': 'test',
-    #             'date_begin': seance.start_date,
-    #             'date_end': seance.start_date,
-    #             'seats_limited': False,
-    #             'date_tz': 'Europe/Paris'
-    #             # Ajoutez d'autres champs de l'événement ici en fonction de vos besoins
-    #         })
-    #         event_id = event.id
-    
-            
-
-    #         return seance
-    #     except Exception as e:
-    #         raise exceptions.ValidationError(f"Erreur lors de la création de l'événement : {e}")
                 
